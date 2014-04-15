@@ -1,3 +1,4 @@
+require 'card_check'
 require 'spec_helper'
 
 describe CardCheck do

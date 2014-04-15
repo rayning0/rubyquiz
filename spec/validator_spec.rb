@@ -1,3 +1,4 @@
+require 'validator'
 require 'spec_helper'
 
 describe Validator do

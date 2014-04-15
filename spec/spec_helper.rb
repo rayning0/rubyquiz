@@ -1,5 +1,3 @@
-require 'card_check'
-require 'validator'
 require 'pry'
 
 RSpec.configure do |config|
