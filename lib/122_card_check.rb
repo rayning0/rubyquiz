@@ -3,9 +3,9 @@
 Raymond Gan - My credit card checking solution
 
 http://rubyquiz.com/quiz122.html
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-Before a credit card is submitted to a financial institution, it generally makes
+Before a credit card is submitted to a financial institution, it usually makes
 sense to run some simple reality checks on the number. The numbers are a good
 length and it's common to make minor transcription errors when the card is not
 scanned directly.
@@ -25,7 +25,7 @@ pattern from one of the accepted card providers. Some of these patterns are:
 | Visa        | 4         | 13 or 16 |
 +------------+-------------+---------------+
 
-All of these card types also generate numbers such that they can be validated by
+All of these card types also generate numbers that can be validated by
 the Luhn algorithm, so that's the second check systems usually try. The steps
 are:
 
@@ -50,15 +50,13 @@ Step 3: 69 % 10 != 0
 
 That card is not valid.
 
-This week's Ruby Quiz is to write a program that accepts a credit card number as
+This Ruby Quiz is to write a program that accepts a credit card number as
 a command-line argument. The program should print the card's type (or Unknown)
 as well a Valid/Invalid indication of whether or not the card passes the Luhn
 algorithm.
 
 =end
-
 class CardCheck
-
   def card_check(cnumber)
     result = []
     sum = 0
@@ -84,14 +82,16 @@ class CardCheck
   # check if card is valid by Luhn algorithm
 
     # double is array with sum of digits of a value after it's doubled.
-    # 0*2 = 0, 1*2 = 2, 2*2 = 4, 3*2 = 6, 4*2 = 8, 5*2 = 10 => 1+0 = 1, 6*2 = 12 => 1+2 = 3, etc.
+    # 0*2 = 0, 1*2 = 2, 2*2 = 4, 3*2 = 6, 4*2 = 8, 5*2 = 10 => 1+0 = 1,
+    # 6*2 = 12 => 1+2 = 3, etc.
     double = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
 
     cnumber.reverse!  # write number backwards
-    number = cnumber.split('')  # cut reversed number into array of single digits
-    number.each_with_index do |n, i|  # makes hash of number. n = digit, i = index
+    number = cnumber.split('') # cut reversed number into single digit array
+    number.each_with_index do |n, i| # makes number hash. n=digit, i=index
 
-      # for every even index, add digit to sum. for every odd index, add double of digit to sum.
+      # for every even index, add digit to sum. for every odd index,
+      # add double of digit to sum.
       # puts "n = #{n}, i = #{i}"
       sum += (i.even?) ? n.to_i : double[n.to_i]
       # puts "sum = #{sum}"
@@ -106,8 +106,10 @@ end
 
 =begin   ----check output of code
 
-  cards = ['1', "4539525598576146", "4716016802653546", "5421884638451606", "5206355609152441",
-    "373000624988415", "342458690063208", "6011633808627972", "6011956740671844"]
+  cards = ['1', "4539525598576146", "4716016802653546",
+                "5421884638451606", "5206355609152441",
+                "373000624988415", "342458690063208",
+                "6011633808627972", "6011956740671844"]
 
   cards.each do |c|
     s, r = card_check(c)

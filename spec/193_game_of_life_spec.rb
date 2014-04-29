@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'game_of_life'
+require '193_game_of_life'
 
 describe 'Game of Life' do
   describe World do
