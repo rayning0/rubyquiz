@@ -24,20 +24,20 @@ class Calculator
     combine(mult_div, plus_minus, calc_md(mult_div[0]), true)
   end
 
-  def calc(x, y, operator)
-    case operator
-    when '*' then x * y
-    when '/' then x / y.to_f
-    when '+' then x + y
-    else x - y
-    end
-  end
+  # def calc(x, y, operator)
+  #   case operator
+  #   when '*' then x * y
+  #   when '/' then x / y.to_f
+  #   when '+' then x + y
+  #   else x - y
+  #   end
+  # end
 
   # evaluate only parts with * and /
   # Ex: " 3 * 4 / 3 "
   def calc_md(md)
     # array of only numbers: [3, 4, 3]
-    nums = md.split.select{ |x| x =~ /[0-9]+/ }.map(&:to_i)
+    nums = md.split.select{ |x| x =~ /[0-9]+/ }.map(&:to_f)
     # array of only * and / symbols: ["*", "/"]
     symbols = md.split.select{|y| y=~ /[*\/]/}
     combine(nums, symbols, nums[0])
@@ -50,9 +50,11 @@ class Calculator
       next if i == 0
       operator = symbols[i - 1]
       if md_flag
-        total = calc(total, calc_md(num), operator)
+        # total = calc(total, calc_md(num), operator)
+        total = total.send(operator, calc_md(num))
       else
-        total = calc(total, num, operator)
+        # total = calc(total, num, operator)
+        total = total.send(operator, num)
       end
     end
     total

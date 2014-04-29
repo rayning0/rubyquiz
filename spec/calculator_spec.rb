@@ -14,14 +14,14 @@ describe Calculator do
     expect(c.evaluate('- 2 + 3 * 4 / 3 - 6 / 3 * 3 + 8')).to eq(4)
   end
 
-  describe '#calc' do
-    it 'calculates basic +, -, *, / expressions with 2 numbers' do
-      expect(c.calc(2, 3, '/')).to eq(0.6666666666666666)
-      expect(c.calc(2, 3, '+')).to eq(5)
-      expect(c.calc(2, 3, '*')).to eq(6)
-      expect(c.calc(2, 3, '-')).to eq(-1)
-    end
-  end
+  # describe '#calc' do
+  #   it 'calculates basic +, -, *, / expressions with 2 numbers' do
+  #     expect(c.calc(2, 3, '/')).to eq(0.6666666666666666)
+  #     expect(c.calc(2, 3, '+')).to eq(5)
+  #     expect(c.calc(2, 3, '*')).to eq(6)
+  #     expect(c.calc(2, 3, '-')).to eq(-1)
+  #   end
+  # end
 
   describe '#calc_md' do
     it 'calculates only expressions with multiplcation/division' do
