@@ -1,6 +1,6 @@
 =begin
-By Raymond Gan
-Automatically makes RSpec file
+By Raymond Gan, 4/30/14
+Automatically makes RSpec files!
 
 Reads in data text file in this format below (on separate lines)
 See '/data/rspec_maker_input.txt' for sample format:
@@ -18,8 +18,6 @@ etc........
 = (end of file)
 
 =end
-
-require 'pry'
 
 INPUT_FILE = '../data/rspec_maker_input.txt'
 OUTPUT_DIR = '../spec/'
