@@ -30,7 +30,10 @@ class Primes
 
   # array of the first count primes
   def self.first(count)
-    n = 650_000  # Try all primes up to n
+    #n = 650_000  # Try all primes up to n
+  # http://en.wikipedia.org/wiki/Prime_number_theorem#Approximations_for_the_nth_prime_number
+  # The nth prime is approx n ln(n).
+    n = count * Math.log(count)
     sieve(n)[0..count - 1]
   end
 end
