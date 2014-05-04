@@ -1,6 +1,5 @@
 # http://www.codewars.com/kata/51b66044bce5799a7f000003/train/ruby
 # http://rubyquiz.com/quiz22.html
-require 'pry'
 
 class RomanNumerals
   ROMAN = { 1 => 'I',

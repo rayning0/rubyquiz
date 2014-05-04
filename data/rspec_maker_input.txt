@@ -1,21 +1,12 @@
-roman_numbers
-RomanNumbers
+title_case
+TitleCase
 *
-to_roman
-29
-1999
-38
+title_case
+'a clash of KINGS', 'a an the of'
+'THE WIND IN THE WILLOWS', 'The In'
+'the quick brown fox'
 
-XXIX
-MCMXCIX
-XXXVIII
-*
-from_roman
-XXIX
-MCMXCIX
-XXXVIII
-
-29
-1999
-38
+'A Clash of Kings'
+'The Wind in the Willows'
+'The Quick Brown Fox'
 =
