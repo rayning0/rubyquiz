@@ -1,3 +1,5 @@
+# http://www.codewars.com/kata/52a89c2ea8ddc5547a000863
+
 class Node
   attr_accessor :next, :name
   def initialize(name)
