@@ -50,7 +50,7 @@ class RomanNumerals
     ROMAN.keys.reverse.inject('') do |answer, div|
       duplicates = int / div
       int = int % div
-      answer += ROMAN[div] * duplicates
+      answer << ROMAN[div] * duplicates
     end
   end
 
