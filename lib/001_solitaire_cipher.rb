@@ -29,7 +29,7 @@ class Encrypt
   # change letters to string of numbers
   def to_num(string)
     string.gsub!(' ', '')
-    string.each_char.map { |char| "#{convert[char]} " }.join[0..-2]
+    string.each_char.map { |char| "#{convert[char]} " }.join.chop
   end
 
   # add message numbers + keystream numbers, mod 26 (max sum = 26)

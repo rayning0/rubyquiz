@@ -1,12 +1,8 @@
-title_case
-TitleCase
+product
+Product
 *
-title_case
-'a clash of KINGS', 'a an the of'
-'THE WIND IN THE WILLOWS', 'The In'
-'the quick brown fox'
+get_products
+[1, 7, 3, 4]
 
-'A Clash of Kings'
-'The Wind in the Willows'
-'The Quick Brown Fox'
+[84, 12, 28, 21]
 =
